@@ -10,9 +10,14 @@ def health_check():
         components = model_registry.get_irrigation_components()
         models_loaded = all(v is not None for v in components.values())
         
+        copra_components = model_registry.get_copra_components()
+        copra_loaded = all(v is not None for v in copra_components.values())
+        
+        
         return jsonify({
-            'status': 'healthy' if models_loaded else 'unhealthy',
-            'models_loaded': models_loaded
+            'status': 'healthy' if models_loaded and copra_loaded else 'unhealthy',
+            'models_loaded': models_loaded,
+            'copra': copra_loaded
         })
     except Exception as e:
         return jsonify({

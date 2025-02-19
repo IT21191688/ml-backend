@@ -15,6 +15,7 @@ class Settings:
     
     # Model settings
     IRRIGATION_MODEL_PATH = os.path.join(MODEL_PATH, 'irrigation')
+    COPRA_MODEL_PATH = os.path.join(MODEL_PATH, 'copra')
     
     # API settings
     CORS_ORIGINS = os.getenv('CORS_ORIGINS', '*')
