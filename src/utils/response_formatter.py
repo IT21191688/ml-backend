@@ -25,3 +25,19 @@ class ResponseFormatter:
             },
             'inputFeatures': prediction_result['input_features']
         }
+        
+    @staticmethod
+    def format_drying_time_response(prediction_result: dict) -> dict:
+        return {
+            'dryingTime': round(prediction_result['drying_time'], 2),
+            'unit': 'hours',
+            'inputFeatures': prediction_result['input_features']
+        }
+
+    @staticmethod
+    def format_oil_yield_response(prediction_result: dict) -> dict:
+        return {
+            'oilYield': round(prediction_result['oil_yield'], 2),
+            'unit': 'kg',
+            'inputFeatures': prediction_result['input_features']
+        }
