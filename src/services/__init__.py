@@ -1,3 +1,3 @@
 from .irrigation_service import IrrigationService
-
-__all__ = ['IrrigationService']
+from .copra_service import CopraService
+__all__ = ['IrrigationService','CopraService']
